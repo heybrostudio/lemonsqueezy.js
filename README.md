@@ -31,4 +31,4 @@ This project is heavily inspired by the following awesome projects.
 
 ## License
 
-[MIT License](https://github.com/heybro/lemonsqueezy.js/blob/main/LICENSE) © 2024-PRESENT [Caven](https://github.com/keyding)
+[MIT License](https://github.com/heybrostudio/lemonsqueezy.js/blob/main/LICENSE) © 2024-PRESENT [Caven](https://github.com/keyding)
