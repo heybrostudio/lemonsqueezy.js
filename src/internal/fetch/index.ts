@@ -50,7 +50,7 @@ export async function $fetch<T>(options: FetchOptions, needApiKey = true) {
     }
 
     const fetchResponse = await fetch(url.href, _options)
-    const data = await fetchResponse.json()
+    const data = (await fetchResponse.json()) as { error?: any; errors?: any }
     const fetchOk = fetchResponse.ok
 
     Object.assign(response, {
