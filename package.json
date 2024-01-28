@@ -32,6 +32,8 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.5.3",
+		"@commitlint/cli": "^18.6.0",
+		"@commitlint/config-conventional": "^18.6.0",
 		"@heybrostudio/biome-config": "^0.0.2",
 		"@types/bun": "latest",
 		"export-size": "^0.7.0",
@@ -44,7 +46,8 @@
 		"typescript": "^5.3.3"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "bun run lint-staged"
+		"pre-commit": "bun run lint-staged",
+		"commit-msg": "bun run commitlint --edit \"$1\""
 	},
 	"lint-staged": {
 		"*": "biome lint . --apply"
