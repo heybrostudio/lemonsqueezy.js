@@ -2,106 +2,106 @@ import { describe, expect, it } from 'bun:test'
 import * as exports from '../src'
 
 describe('Export', () => {
-	it('Should return all exported', () => {
-		const shouldBeExports = [
-			// Setup
-			'lemonSqueezySetup',
+  it('Should return all exported', () => {
+    const shouldBeExports = [
+      // Setup
+      'lemonSqueezySetup',
 
-			// Users
-			'getAuthenticatedUser',
+      // Users
+      'getAuthenticatedUser',
 
-			// Stores
-			'getStoreById',
-			'getAllStores',
+      // Stores
+      'getStoreById',
+      'getAllStores',
 
-			// Customers
-			'listCustomers',
-			'getCustomer',
-			'createCustomer',
-			'archiveCustomer',
-			'updateCustomer',
+      // Customers
+      'listCustomers',
+      'getCustomer',
+      'createCustomer',
+      'archiveCustomer',
+      'updateCustomer',
 
-			// Products
-			'getProduct',
-			'listProducts',
+      // Products
+      'getProduct',
+      'listProducts',
 
-			// Variants
-			'getVariant',
-			'listVariants',
+      // Variants
+      'getVariant',
+      'listVariants',
 
-			// Prices
-			'getPrice',
-			'listPrices',
+      // Prices
+      'getPrice',
+      'listPrices',
 
-			// Files
-			'getFile',
-			'listFiles',
+      // Files
+      'getFile',
+      'listFiles',
 
-			// Orders
-			'getOrder',
-			'listOrders',
+      // Orders
+      'getOrder',
+      'listOrders',
 
-			// Order Items
-			'getOrderItem',
-			'listOrderItems',
+      // Order Items
+      'getOrderItem',
+      'listOrderItems',
 
-			// Subscriptions
-			'getSubscription',
-			'listSubscriptions',
-			'updateSubscription',
-			'cancelSubscription',
+      // Subscriptions
+      'getSubscription',
+      'listSubscriptions',
+      'updateSubscription',
+      'cancelSubscription',
 
-			// Subscriptions Invoices
-			'getSubscriptionInvoice',
-			'listSubscriptionInvoices',
+      // Subscriptions Invoices
+      'getSubscriptionInvoice',
+      'listSubscriptionInvoices',
 
-			// Subscriptions Items
-			'getSubscriptionItem',
-			'listSubscriptionItems',
-			'getSubscriptionItemCurrentUsage',
-			'updateSubscriptionItem',
+      // Subscriptions Items
+      'getSubscriptionItem',
+      'listSubscriptionItems',
+      'getSubscriptionItemCurrentUsage',
+      'updateSubscriptionItem',
 
-			// Usage Records
-			'listUsageRecords',
-			'getUsageRecord',
-			'createUsageRecord',
+      // Usage Records
+      'listUsageRecords',
+      'getUsageRecord',
+      'createUsageRecord',
 
-			// Discounts
-			'listDiscounts',
-			'getDiscount',
-			'createDiscount',
-			'deleteDiscount',
+      // Discounts
+      'listDiscounts',
+      'getDiscount',
+      'createDiscount',
+      'deleteDiscount',
 
-			// Discount Redemptions
-			'listDiscountRedemptions',
-			'getDiscountRedemption',
+      // Discount Redemptions
+      'listDiscountRedemptions',
+      'getDiscountRedemption',
 
-			// License keys
-			'listLicenseKeys',
-			'getLicenseKey',
-			'updateLicenseKey',
+      // License keys
+      'listLicenseKeys',
+      'getLicenseKey',
+      'updateLicenseKey',
 
-			// License Key Instances
-			'listLicenseKeyInstances',
-			'getLicenseKeyInstance',
+      // License Key Instances
+      'listLicenseKeyInstances',
+      'getLicenseKeyInstance',
 
-			// Checkouts
-			'listCheckouts',
-			'getCheckout',
-			'createCheckout',
+      // Checkouts
+      'listCheckouts',
+      'getCheckout',
+      'createCheckout',
 
-			// Webhooks
-			'listWebhooks',
-			'getWebhook',
-			'createWebhook',
-			'updateWebhook',
-			'deleteWebhook',
+      // Webhooks
+      'listWebhooks',
+      'getWebhook',
+      'createWebhook',
+      'updateWebhook',
+      'deleteWebhook',
 
-			// License
-			'activateLicense',
-			'validateLicense',
-			'deactivateLicense',
-		]
-		expect(Object.keys(exports).length).toBe(shouldBeExports.length)
-	})
+      // License
+      'activateLicense',
+      'validateLicense',
+      'deactivateLicense',
+    ]
+    expect(Object.keys(exports).length).toBe(shouldBeExports.length)
+  })
 })

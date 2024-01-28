@@ -10,7 +10,7 @@ export const API_BASE_URL = 'https://api.lemonsqueezy.com'
  * @returns Whether it is an object type.
  */
 export function isObject(value: unknown): value is Record<string, unknown> {
-	return Object.prototype.toString.call(value) === '[object Object]'
+  return Object.prototype.toString.call(value) === '[object Object]'
 }
 
 /**
@@ -20,7 +20,7 @@ export function isObject(value: unknown): value is Record<string, unknown> {
  * @returns Underscore naming.
  */
 export function camelToUnderscore(key: string) {
-	return key.replace(/[A-Z]/g, (match) => `_${match.toLowerCase()}`)
+  return key.replace(/[A-Z]/g, (match) => `_${match.toLowerCase()}`)
 }
 
 /**
@@ -31,16 +31,16 @@ export function camelToUnderscore(key: string) {
  * @returns A converted object.
  */
 export function convertKeys(obj: Record<string, unknown>, excludedValue: unknown = undefined) {
-	const newObj: Record<string, unknown> = {}
+  const newObj: Record<string, unknown> = {}
 
-	for (const key in obj) {
-		if (obj[key] === excludedValue) continue
-		newObj[camelToUnderscore(key)] = isObject(obj[key])
-			? convertKeys(obj[key] as Record<string, unknown>, excludedValue)
-			: obj[key]
-	}
+  for (const key in obj) {
+    if (obj[key] === excludedValue) continue
+    newObj[camelToUnderscore(key)] = isObject(obj[key])
+      ? convertKeys(obj[key] as Record<string, unknown>, excludedValue)
+      : obj[key]
+  }
 
-	return newObj
+  return newObj
 }
 
 /**
@@ -50,8 +50,8 @@ export function convertKeys(obj: Record<string, unknown>, excludedValue: unknown
  * @returns A query string containing `include`.
  */
 export function convertIncludeToQueryString(include: string[] | undefined) {
-	if (!include || !Array.isArray(include) || !include.length) return ''
-	return `?include=${include.join(',')}`
+  if (!include || !Array.isArray(include) || !include.length) return ''
+  return `?include=${include.join(',')}`
 }
 
 /**
@@ -61,25 +61,25 @@ export function convertIncludeToQueryString(include: string[] | undefined) {
  * @returns A query string containing `filter`, `include` and `page`.
  */
 export function convertListParamsToQueryString(params: Params) {
-	const { filter = {}, page = {}, include = [] } = params
-	const convertedQuery = convertKeys({ filter, page, include: include.join(',') })
-	const searchParams = {} as Record<string, string>
+  const { filter = {}, page = {}, include = [] } = params
+  const convertedQuery = convertKeys({ filter, page, include: include.join(',') })
+  const searchParams = {} as Record<string, string>
 
-	for (const key in convertedQuery) {
-		const params = convertedQuery[key]
+  for (const key in convertedQuery) {
+    const params = convertedQuery[key]
 
-		if (isObject(params)) {
-			for (const iKey in params) {
-				searchParams[`${key}[${iKey}]`] = `${params[iKey]}`
-			}
-		} else {
-			searchParams[`${key}`] = `${convertedQuery[key]}`
-		}
-	}
+    if (isObject(params)) {
+      for (const iKey in params) {
+        searchParams[`${key}[${iKey}]`] = `${params[iKey]}`
+      }
+    } else {
+      searchParams[`${key}`] = `${convertedQuery[key]}`
+    }
+  }
 
-	const queryString = new URLSearchParams(searchParams).toString()
+  const queryString = new URLSearchParams(searchParams).toString()
 
-	return queryString ? `?${queryString}` : ''
+  return queryString ? `?${queryString}` : ''
 }
 
 /**
@@ -88,7 +88,7 @@ export function convertListParamsToQueryString(params: Params) {
  * @returns An 8-character string of uppercase letters and numbers.
  */
 export function generateDiscount() {
-	return btoa(Date.now().toString()).slice(-10, -2).toUpperCase()
+  return btoa(Date.now().toString()).slice(-10, -2).toUpperCase()
 }
 
 /**
@@ -97,9 +97,9 @@ export function generateDiscount() {
  * @param checkedObject The checked object value
  */
 export function requiredCheck(checkedObject: Record<string, unknown>) {
-	for (const key in checkedObject) {
-		if (!checkedObject[key]) {
-			throw Error(`Please provide the required parameter: ${key}.`)
-		}
-	}
+  for (const key in checkedObject) {
+    if (!checkedObject[key]) {
+      throw Error(`Please provide the required parameter: ${key}.`)
+    }
+  }
 }

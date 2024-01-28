@@ -10,10 +10,10 @@ import type { GetPriceParams, ListPrices, ListPricesParams, Price } from './type
  * @returns A price object.
  */
 export function getPrice(priceId: number | string, params: GetPriceParams = {}) {
-	requiredCheck({ priceId })
-	return $fetch<Price>({
-		path: `/v1/prices/${priceId}${convertIncludeToQueryString(params.include)}`,
-	})
+  requiredCheck({ priceId })
+  return $fetch<Price>({
+    path: `/v1/prices/${priceId}${convertIncludeToQueryString(params.include)}`,
+  })
 }
 
 /**
@@ -29,7 +29,7 @@ export function getPrice(priceId: number | string, params: GetPriceParams = {}) 
  * @returns A paginated list of price objects ordered by `created_at` (descending).
  */
 export function listPrices(params: ListPricesParams = {}) {
-	return $fetch<ListPrices>({
-		path: `/v1/prices${convertListParamsToQueryString(params)}`,
-	})
+  return $fetch<ListPrices>({
+    path: `/v1/prices${convertListParamsToQueryString(params)}`,
+  })
 }

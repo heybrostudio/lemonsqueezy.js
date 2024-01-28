@@ -7,7 +7,7 @@ const KV: Record<string, any> = {}
  * @returns Returns the `value` corresponding to `key`.
  */
 export function getKV(key: string) {
-	return KV[key]
+  return KV[key]
 }
 
 /**
@@ -17,5 +17,5 @@ export function getKV(key: string) {
  * @param value Set the `value` of the `key`.
  */
 export function setKV(key: string, value: any) {
-	KV[key] = value
+  KV[key] = value
 }

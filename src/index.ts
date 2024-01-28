@@ -48,10 +48,10 @@ export { getSubscriptionInvoice, listSubscriptionInvoices } from './subscription
 // Subscription Items
 export type { SubscriptionItem, SubscriptionItemCurrentUsage, ListSubscriptionItems } from './subscriptionItems/types'
 export {
-	getSubscriptionItem,
-	listSubscriptionItems,
-	getSubscriptionItemCurrentUsage,
-	updateSubscriptionItem,
+  getSubscriptionItem,
+  listSubscriptionItems,
+  getSubscriptionItemCurrentUsage,
+  updateSubscriptionItem,
 } from './subscriptionItems'
 
 // Usage Records

@@ -11,8 +11,8 @@ import type { GetStoreParams, ListStores, ListStoresParams, Store } from './type
  */
 
 export function getStore(storeId: number | string, params: GetStoreParams = {}) {
-	requiredCheck({ storeId })
-	return $fetch<Store>({ path: `/v1/stores/${storeId}${convertIncludeToQueryString(params.include)}` })
+  requiredCheck({ storeId })
+  return $fetch<Store>({ path: `/v1/stores/${storeId}${convertIncludeToQueryString(params.include)}` })
 }
 
 /**
@@ -26,5 +26,5 @@ export function getStore(storeId: number | string, params: GetStoreParams = {}) 
  * @returns A paginated list of `store` objects ordered by name.
  */
 export function listStores(params: ListStoresParams = {}) {
-	return $fetch<ListStores>({ path: `/v1/stores${convertListParamsToQueryString(params)}` })
+  return $fetch<ListStores>({ path: `/v1/stores${convertListParamsToQueryString(params)}` })
 }

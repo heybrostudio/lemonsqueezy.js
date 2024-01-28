@@ -10,10 +10,10 @@ import type { File, GetFileParams, ListFiles, ListFilesParams } from './types'
  * @returns A file object.
  */
 export function getFile(fileId: number | string, params: GetFileParams = {}) {
-	requiredCheck({ fileId })
-	return $fetch<File>({
-		path: `/v1/files/${fileId}${convertIncludeToQueryString(params.include)}`,
-	})
+  requiredCheck({ fileId })
+  return $fetch<File>({
+    path: `/v1/files/${fileId}${convertIncludeToQueryString(params.include)}`,
+  })
 }
 
 /**
@@ -29,7 +29,7 @@ export function getFile(fileId: number | string, params: GetFileParams = {}) {
  * @returns A paginated list of file objects ordered by `sort`.
  */
 export function listFiles(params: ListFilesParams = {}) {
-	return $fetch<ListFiles>({
-		path: `/v1/files${convertListParamsToQueryString(params)}`,
-	})
+  return $fetch<ListFiles>({
+    path: `/v1/files${convertListParamsToQueryString(params)}`,
+  })
 }
