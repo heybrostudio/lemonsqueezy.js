@@ -82,6 +82,9 @@ For more functions usage, see [Wiki](https://github.com/heybrostudio/lemonsqueez
 
 ## Bundle size
 
+<details>
+  <summary>Click to view</summary>
+
 | export                         | min+brotli |
 | :----------------------------- | ---------: |
 | createDiscount                 | 870 B      |
@@ -140,6 +143,8 @@ For more functions usage, see [Wiki](https://github.com/heybrostudio/lemonsqueez
 | deleteDiscount                 | 584 B      |
 | getAuthenticatedUser           | 527 B      |
 | lemonSqueezySetup              | 100 B      |
+
+</details>
 
 ## Contributing
 
