@@ -9,7 +9,6 @@ import type { GetStoreParams, ListStores, ListStoresParams, Store } from './type
  * @param [params.include] (Optional) Related resources.
  * @returns A store object.
  */
-
 export function getStore(storeId: number | string, params: GetStoreParams = {}) {
   requiredCheck({ storeId })
   return $fetch<Store>({ path: `/v1/stores/${storeId}${convertIncludeToQueryString(params.include)}` })
@@ -18,11 +17,11 @@ export function getStore(storeId: number | string, params: GetStoreParams = {}) 
 /**
  * List all stores.
  *
- * @param {object} [params] (Optional) Additional parameters.
- * @param {object} [params.page] (Optional) Custom paginated queries.
- * @param {number} [params.page.number] (Optional) The parameter determine which page to retrieve.
- * @param {number} [params.page.size] (Optional) The parameter to determine how many results to return per page.
- * @param {Array<"variant">} [params.include] (Optional) Related resources.
+ * @param [params] (Optional) Additional parameters.
+ * @param [params.page] (Optional) Custom paginated queries.
+ * @param [params.page.number] (Optional) The parameter determine which page to retrieve.
+ * @param [params.page.size] (Optional) The parameter to determine how many results to return per page.
+ * @param [params.include] (Optional) Related resources.
  * @returns A paginated list of `store` objects ordered by name.
  */
 export function listStores(params: ListStoresParams = {}) {
