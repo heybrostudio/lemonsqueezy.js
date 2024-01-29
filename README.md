@@ -2,12 +2,12 @@
 
 [![NPM Version](https://img.shields.io/npm/v/%40heybrostudio%2Flemonsqueezy.js?label=&color=%230d9488)](https://www.npmjs.com/package/@heybrostudio/lemonsqueezy.js)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?label=)](https://opensource.org/licenses/MIT)
-[![Static Badge](https://img.shields.io/badge/APIs_Usage-%237c3aed)](https://github.com/heybrostudio/lemonsqueezy.js/blob/main/APIs.md)
-![APIs Count](https://img.shields.io/badge/56_APIs-%232563eb)
+[![Static Badge](https://img.shields.io/badge/Functions_Usage-%237c3aed)](https://github.com/heybrostudio/lemonsqueezy.js/wiki)
+![APIs Count](https://img.shields.io/badge/56_Functions-%232563eb)
 
 ## Introduction
 
-This is the unofficial JavaScript SDK for Lemon Squeezy.
+This is the unofficial JavaScript/TypeScript SDK for Lemon Squeezy.
 
 Please read the [API introduction page](https://docs.lemonsqueezy.com/api) to understand how the API works.
 
@@ -78,7 +78,7 @@ console.log(data)
 */
 ```
 
-For more API usage, see [APIs Usage](https://github.com/heybrostudio/lemonsqueezy.js/blob/main/APIs.md).
+For more functions usage, see [Wiki](https://github.com/heybrostudio/lemonsqueezy.js/wiki).
 
 ## Bundle size
 
