@@ -1,8 +1,9 @@
 # The Lemon Squeezy JavaScript/TypeScript SDK
 
-[![Build Status](https://travis-ci.org/your-username/your-library.svg?branch=master)](https://travis-ci.org/your-username/your-library)
-[![npm version](https://badge.fury.io/js/your-library.svg)](https://www.npmjs.com/package/your-library)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![NPM Version](https://img.shields.io/npm/v/%40heybrostudio%2Flemonsqueezy.js?label=&color=%230d9488)](https://www.npmjs.com/package/@heybrostudio/lemonsqueezy.js)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?label=)](https://opensource.org/licenses/MIT)
+[![Static Badge](https://img.shields.io/badge/APIs_Usage-%237c3aed)](https://github.com/heybrostudio/lemonsqueezy.js/blob/main/APIs.md)
+![APIs Count](https://img.shields.io/badge/56_APIs-%232563eb)
 
 ## Introduction
 
