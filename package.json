@@ -14,15 +14,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "homepage": "https://github.com/heybrostudio/lemonsqueezy.js",
-  "keywords": [
-    "lemonsqueezy",
-    "javascript",
-    "typescript"
-  ],
+  "keywords": ["lemonsqueezy", "javascript", "typescript"],
   "scripts": {
     "build": "unbuild",
     "test": "bun test",
@@ -50,6 +44,9 @@
   },
   "peerDependencies": {
     "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "simple-git-hooks": {
     "pre-commit": "bun run lint-staged",
