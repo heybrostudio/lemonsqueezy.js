@@ -1,5 +1,6 @@
 // Setup
 export { lemonSqueezySetup } from './internal'
+export type { Flatten } from './types'
 
 // User
 export type { User } from './users/types'

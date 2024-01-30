@@ -1,12 +1,10 @@
-import type { Flatten } from '../../types'
-
 type ApiVersion = 'v1'
 
-export type FetchResponse<T> = Flatten<{
+export type FetchResponse<T> = {
   statusCode: number | null
   data: T | null
   error: Error | null
-}>
+}
 
 export type FetchOptions = {
   /**
