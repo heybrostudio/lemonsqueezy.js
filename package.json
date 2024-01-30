@@ -1,7 +1,7 @@
 {
   "name": "@heybrostudio/lemonsqueezy.js",
   "description": "This is the unofficial JavaScript SDK for Lemon Squeezy.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Caven <cavenasdev@gmail.com>",
   "type": "module",
   "exports": {
