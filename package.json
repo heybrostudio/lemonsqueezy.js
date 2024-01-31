@@ -18,6 +18,7 @@
 	"homepage": "https://github.com/heybrostudio/lemonsqueezy.js",
 	"keywords": ["lemonsqueezy", "javascript", "typescript"],
 	"scripts": {
+		"dev": "bun run --watch examples/dev.ts",
 		"build": "unbuild",
 		"test": "bun test",
 		"coverage": "bun test --coverage",
