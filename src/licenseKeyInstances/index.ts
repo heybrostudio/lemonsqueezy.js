@@ -22,17 +22,6 @@ export function getLicenseKeyInstance(licenseKeyInstanceId: number | string, par
 }
 
 /**
- * List all license key instances
- *
- * @param filter (Optional) Filter Parameters
- * @param filter.licenseKeyId (Optional) The license key ID
- * @param page (Optional) Page parameters
- * @param page.number (Optional) Which page to retrieve
- * @param page.size (Optional) How many results to return per page
- * @returns
- */
-
-/**
  * List all license key instances.
  *
  * @param [params] (Optional) Additional parameters.

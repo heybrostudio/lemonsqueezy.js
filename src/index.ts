@@ -80,7 +80,13 @@ export {
 } from './subscriptionItems'
 
 // Usage Records
-export type { UsageRecord, ListUsageRecords, GetUsageRecordParams, ListUsageRecordsParams } from './usageRecords/types'
+export type {
+  NewUsageRecord,
+  UsageRecord,
+  ListUsageRecords,
+  GetUsageRecordParams,
+  ListUsageRecordsParams,
+} from './usageRecords/types'
 export { listUsageRecords, getUsageRecord, createUsageRecord } from './usageRecords'
 
 // Discounts
@@ -107,7 +113,12 @@ export type {
 export { listLicenseKeys, getLicenseKey, updateLicenseKey } from './licenseKeys'
 
 // License Key Instances
-export type { LicenseKeyInstance, ListLicenseKeyInstances } from './licenseKeyInstances/types'
+export type {
+  GetLicenseKeyInstanceParams,
+  ListLicenseKeyInstancesParams,
+  LicenseKeyInstance,
+  ListLicenseKeyInstances,
+} from './licenseKeyInstances/types'
 export { listLicenseKeyInstances, getLicenseKeyInstance } from './licenseKeyInstances'
 
 // Checkouts

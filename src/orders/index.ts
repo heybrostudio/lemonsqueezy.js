@@ -4,13 +4,6 @@ import type { GetOrderParams, ListOrders, ListOrdersParams, Order } from './type
 /**
  * Retrieve an order.
  *
- * @param orderId The given order id
- * @returns An order object
- */
-
-/**
- * Retrieve an order.
- *
  * @param orderId The given order id.
  * @param [params] (Optional) Additional parameters.
  * @param [params.include] (Optional) Related resources.
