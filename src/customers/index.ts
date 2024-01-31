@@ -5,7 +5,7 @@ import type {
   ListCustomers,
   ListCustomersParams,
   NewCustomer,
-  UpdatedCustomer,
+  UpdateCustomer,
 } from './types'
 
 /**
@@ -55,7 +55,7 @@ export function createCustomer(storeId: number | string, customer: NewCustomer) 
  * @param customer.status (Optional) The email marketing status of the customer. Only one value: `archived`.
  * @returns A customer object.
  */
-export function updateCustomer(customerId: string | number, customer: UpdatedCustomer) {
+export function updateCustomer(customerId: string | number, customer: UpdateCustomer) {
   requiredCheck({ customerId })
   return $fetch<Customer>({
     path: `/v1/customers/${customerId}`,

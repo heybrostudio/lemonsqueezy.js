@@ -92,6 +92,6 @@ type CustomerData = Data<Attributes, Pick<Relationships, 'store' | 'orders' | 's
 export type GetCustomerParams = Pick<Params<(keyof CustomerData['relationships'])[]>, 'include'>
 export type ListCustomersParams = Params<GetCustomerParams['include'], { storeId?: string | number; email?: string }>
 export type NewCustomer = Pick<Attributes, 'name' | 'email'> & Partial<Pick<Attributes, 'city' | 'country' | 'region'>>
-export type UpdatedCustomer = Partial<NewCustomer & { status: 'archived' }>
+export type UpdateCustomer = Partial<NewCustomer & { status: 'archived' }>
 export type Customer = Omit<LemonSqueezyResponse<CustomerData, unknown, Pick<Links, 'self'>>, 'meta'>
 export type ListCustomers = LemonSqueezyResponse<CustomerData[], Pick<Meta, 'page'>, Pick<Links, 'last' | 'first'>>

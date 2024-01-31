@@ -15,7 +15,7 @@ export type {
   Customer,
   ListCustomers,
   NewCustomer,
-  UpdatedCustomer,
+  UpdateCustomer,
   GetCustomerParams,
   ListCustomersParams,
 } from './customers/types'
