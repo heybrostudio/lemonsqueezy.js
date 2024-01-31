@@ -14,15 +14,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "homepage": "https://github.com/heybrostudio/lemonsqueezy.js",
-  "keywords": [
-    "lemonsqueezy",
-    "javascript",
-    "typescript"
-  ],
+  "keywords": ["lemonsqueezy", "javascript", "typescript"],
   "scripts": {
     "build": "unbuild",
     "test": "bun test",
@@ -40,10 +34,10 @@
     "@biomejs/biome": "^1.5.3",
     "@commitlint/cli": "^18.6.0",
     "@commitlint/config-conventional": "^18.6.0",
-    "@heybrostudio/biome-config": "^0.0.4",
+    "@heybrostudio/biome-config": "^0.0.5",
     "@types/bun": "latest",
     "export-size": "^0.7.0",
-    "lint-staged": "^15.2.0",
+    "lint-staged": "^15.2.1",
     "simple-git-hooks": "^2.9.0",
     "taze": "^0.13.1",
     "unbuild": "^2.0.0"
