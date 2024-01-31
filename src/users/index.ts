@@ -7,5 +7,5 @@ import type { User } from './types'
  * @returns A user object.
  */
 export function getAuthenticatedUser() {
-  return $fetch<User>({ path: '/v1/users/me' })
+	return $fetch<User>({ path: '/v1/users/me' })
 }

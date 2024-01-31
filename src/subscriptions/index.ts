@@ -1,16 +1,16 @@
 import {
-  $fetch,
-  convertIncludeToQueryString,
-  convertKeys,
-  convertListParamsToQueryString,
-  requiredCheck,
+	$fetch,
+	convertIncludeToQueryString,
+	convertKeys,
+	convertListParamsToQueryString,
+	requiredCheck,
 } from '../internal'
 import type {
-  GetSubscriptionParams,
-  ListSubscriptions,
-  ListSubscriptionsParams,
-  Subscription,
-  UpdateSubscription,
+	GetSubscriptionParams,
+	ListSubscriptions,
+	ListSubscriptionsParams,
+	Subscription,
+	UpdateSubscription,
 } from './types'
 
 /**
@@ -22,10 +22,10 @@ import type {
  * @returns A subscription object.
  */
 export function getSubscription(subscriptionId: number | string, params: GetSubscriptionParams = {}) {
-  requiredCheck({ subscriptionId })
-  return $fetch<Subscription>({
-    path: `/v1/subscriptions/${subscriptionId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ subscriptionId })
+	return $fetch<Subscription>({
+		path: `/v1/subscriptions/${subscriptionId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -36,28 +36,28 @@ export function getSubscription(subscriptionId: number | string, params: GetSubs
  * @returns A subscription object.
  */
 export function updateSubscription(subscriptionId: string | number, updateSubscription: UpdateSubscription) {
-  requiredCheck({ subscriptionId })
-  const { variantId, cancelled, billingAnchor, invoiceImmediately, disableProrations, pause } = updateSubscription
-  const attributes = convertKeys({
-    variantId,
-    cancelled,
-    billingAnchor,
-    invoiceImmediately,
-    disableProrations,
-    pause,
-  })
+	requiredCheck({ subscriptionId })
+	const { variantId, cancelled, billingAnchor, invoiceImmediately, disableProrations, pause } = updateSubscription
+	const attributes = convertKeys({
+		variantId,
+		cancelled,
+		billingAnchor,
+		invoiceImmediately,
+		disableProrations,
+		pause,
+	})
 
-  return $fetch<Subscription>({
-    path: `/v1/subscriptions/${subscriptionId}`,
-    method: 'PATCH',
-    body: {
-      data: {
-        type: 'subscriptions',
-        id: subscriptionId.toString(),
-        attributes,
-      },
-    },
-  })
+	return $fetch<Subscription>({
+		path: `/v1/subscriptions/${subscriptionId}`,
+		method: 'PATCH',
+		body: {
+			data: {
+				type: 'subscriptions',
+				id: subscriptionId.toString(),
+				attributes,
+			},
+		},
+	})
 }
 
 /**
@@ -67,11 +67,11 @@ export function updateSubscription(subscriptionId: string | number, updateSubscr
  * @returns The Subscription object in a cancelled state.
  */
 export function cancelSubscription(subscriptionId: string | number) {
-  requiredCheck({ subscriptionId })
-  return $fetch<Subscription>({
-    path: `/v1/subscriptions/${subscriptionId}`,
-    method: 'DELETE',
-  })
+	requiredCheck({ subscriptionId })
+	return $fetch<Subscription>({
+		path: `/v1/subscriptions/${subscriptionId}`,
+		method: 'DELETE',
+	})
 }
 
 /**
@@ -92,7 +92,7 @@ export function cancelSubscription(subscriptionId: string | number) {
  * @returns A paginated list of subscription objects ordered by `created_at` (descending).
  */
 export function listSubscriptions(params: ListSubscriptionsParams = {}) {
-  return $fetch<ListSubscriptions>({
-    path: `/v1/subscriptions${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListSubscriptions>({
+		path: `/v1/subscriptions${convertListParamsToQueryString(params)}`,
+	})
 }

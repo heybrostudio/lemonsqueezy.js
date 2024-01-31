@@ -1,9 +1,9 @@
 import {
-  $fetch,
-  convertIncludeToQueryString,
-  convertKeys,
-  convertListParamsToQueryString,
-  requiredCheck,
+	$fetch,
+	convertIncludeToQueryString,
+	convertKeys,
+	convertListParamsToQueryString,
+	requiredCheck,
 } from '../internal'
 import type { Checkout, GetCheckoutParams, ListCheckouts, ListCheckoutsParams, NewCheckout } from './types'
 
@@ -16,47 +16,47 @@ import type { Checkout, GetCheckoutParams, ListCheckouts, ListCheckoutsParams, N
  * @returns A checkout object.
  */
 export function createCheckout(storeId: number | string, variantId: number | string, checkout: NewCheckout = {}) {
-  requiredCheck({ storeId, variantId })
+	requiredCheck({ storeId, variantId })
 
-  const { customPrice, productOptions, checkoutOptions, checkoutData, expiresAt, preview, testMode } = checkout
-  const relationships = {
-    store: {
-      data: {
-        type: 'stores',
-        id: storeId.toString(),
-      },
-    },
-    variant: {
-      data: {
-        type: 'variants',
-        id: variantId.toString(),
-      },
-    },
-  }
-  const attributes = {
-    customPrice,
-    expiresAt,
-    preview,
-    testMode,
-    productOptions,
-    checkoutOptions,
-    checkoutData: {
-      ...checkoutData,
-      variantQuantities: checkoutData?.variantQuantities?.map((item) => convertKeys(item)),
-    },
-  }
+	const { customPrice, productOptions, checkoutOptions, checkoutData, expiresAt, preview, testMode } = checkout
+	const relationships = {
+		store: {
+			data: {
+				type: 'stores',
+				id: storeId.toString(),
+			},
+		},
+		variant: {
+			data: {
+				type: 'variants',
+				id: variantId.toString(),
+			},
+		},
+	}
+	const attributes = {
+		customPrice,
+		expiresAt,
+		preview,
+		testMode,
+		productOptions,
+		checkoutOptions,
+		checkoutData: {
+			...checkoutData,
+			variantQuantities: checkoutData?.variantQuantities?.map((item) => convertKeys(item)),
+		},
+	}
 
-  return $fetch<Checkout>({
-    path: '/v1/checkouts',
-    method: 'POST',
-    body: {
-      data: {
-        type: 'checkouts',
-        attributes: convertKeys(attributes),
-        relationships,
-      },
-    },
-  })
+	return $fetch<Checkout>({
+		path: '/v1/checkouts',
+		method: 'POST',
+		body: {
+			data: {
+				type: 'checkouts',
+				attributes: convertKeys(attributes),
+				relationships,
+			},
+		},
+	})
 }
 
 /**
@@ -68,10 +68,10 @@ export function createCheckout(storeId: number | string, variantId: number | str
  * @returns A checkout object.
  */
 export function getCheckout(checkoutId: number | string, params: GetCheckoutParams = {}) {
-  requiredCheck({ checkoutId })
-  return $fetch<Checkout>({
-    path: `/v1/checkouts/${checkoutId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ checkoutId })
+	return $fetch<Checkout>({
+		path: `/v1/checkouts/${checkoutId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -88,7 +88,7 @@ export function getCheckout(checkoutId: number | string, params: GetCheckoutPara
  * @returns A paginated list of checkout objects ordered by `created_at` (descending).
  */
 export function listCheckouts(params: ListCheckoutsParams = {}) {
-  return $fetch<ListCheckouts>({
-    path: `/v1/checkouts${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListCheckouts>({
+		path: `/v1/checkouts${convertListParamsToQueryString(params)}`,
+	})
 }

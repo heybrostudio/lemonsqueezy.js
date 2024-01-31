@@ -1,10 +1,10 @@
 import { $fetch, convertIncludeToQueryString, convertListParamsToQueryString, requiredCheck } from '../internal'
 import type {
-  GetUsageRecordParams,
-  ListUsageRecords,
-  ListUsageRecordsParams,
-  NewUsageRecord,
-  UsageRecord,
+	GetUsageRecordParams,
+	ListUsageRecords,
+	ListUsageRecordsParams,
+	NewUsageRecord,
+	UsageRecord,
 } from './types'
 
 /**
@@ -16,10 +16,10 @@ import type {
  * @returns A usage record object.
  */
 export function getUsageRecord(usageRecordId: number | string, params: GetUsageRecordParams = {}) {
-  requiredCheck({ usageRecordId })
-  return $fetch<UsageRecord>({
-    path: `/v1/usage-records/${usageRecordId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ usageRecordId })
+	return $fetch<UsageRecord>({
+		path: `/v1/usage-records/${usageRecordId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -35,9 +35,9 @@ export function getUsageRecord(usageRecordId: number | string, params: GetUsageR
  * @returns A paginated list of usage record objects ordered by `created_at` (descending).
  */
 export function listUsageRecords(params: ListUsageRecordsParams = {}) {
-  return $fetch<ListUsageRecords>({
-    path: `/v1/usage-records${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListUsageRecords>({
+		path: `/v1/usage-records${convertListParamsToQueryString(params)}`,
+	})
 }
 
 /**
@@ -50,26 +50,26 @@ export function listUsageRecords(params: ListUsageRecordsParams = {}) {
  * @returns A usage record object.
  */
 export function createUsageRecord(usageRecord: NewUsageRecord) {
-  const { quantity, action = 'increment', subscriptionItemId } = usageRecord
-  return $fetch<UsageRecord>({
-    path: '/v1/usage-records',
-    method: 'POST',
-    body: {
-      data: {
-        type: 'usage-records',
-        attributes: {
-          quantity,
-          action,
-        },
-        relationships: {
-          'subscription-item': {
-            data: {
-              type: 'subscription-items',
-              id: subscriptionItemId.toString(),
-            },
-          },
-        },
-      },
-    },
-  })
+	const { quantity, action = 'increment', subscriptionItemId } = usageRecord
+	return $fetch<UsageRecord>({
+		path: '/v1/usage-records',
+		method: 'POST',
+		body: {
+			data: {
+				type: 'usage-records',
+				attributes: {
+					quantity,
+					action,
+				},
+				relationships: {
+					'subscription-item': {
+						data: {
+							type: 'subscription-items',
+							id: subscriptionItemId.toString(),
+						},
+					},
+				},
+			},
+		},
+	})
 }

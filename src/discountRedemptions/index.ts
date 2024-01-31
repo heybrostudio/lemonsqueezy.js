@@ -1,9 +1,9 @@
 import { $fetch, convertIncludeToQueryString, convertListParamsToQueryString, requiredCheck } from '../internal'
 import type {
-  DiscountRedemption,
-  GetDiscountRedemptionParams,
-  ListDiscountRedemptions,
-  ListDiscountRedemptionsParams,
+	DiscountRedemption,
+	GetDiscountRedemptionParams,
+	ListDiscountRedemptions,
+	ListDiscountRedemptionsParams,
 } from './types'
 
 /**
@@ -15,10 +15,10 @@ import type {
  * @returns A discount redemption object.
  */
 export function getDiscountRedemption(discountRedemptionId: number | string, params: GetDiscountRedemptionParams = {}) {
-  requiredCheck({ discountRedemptionId })
-  return $fetch<DiscountRedemption>({
-    path: `/v1/discount-redemptions/${discountRedemptionId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ discountRedemptionId })
+	return $fetch<DiscountRedemption>({
+		path: `/v1/discount-redemptions/${discountRedemptionId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -35,7 +35,7 @@ export function getDiscountRedemption(discountRedemptionId: number | string, par
  * @returns A paginated list of discount redemption objects ordered by `created_at` (descending).
  */
 export function listDiscountRedemptions(params: ListDiscountRedemptionsParams = {}) {
-  return $fetch<ListDiscountRedemptions>({
-    path: `/v1/discount-redemptions${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListDiscountRedemptions>({
+		path: `/v1/discount-redemptions${convertListParamsToQueryString(params)}`,
+	})
 }

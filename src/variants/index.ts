@@ -10,10 +10,10 @@ import type { GetVariantParams, ListVariants, ListVariantsParams, Variant } from
  * @returns A variant object.
  */
 export function getVariant(variantId: number | string, params: GetVariantParams = {}) {
-  requiredCheck({ variantId })
-  return $fetch<Variant>({
-    path: `/v1/variants/${variantId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ variantId })
+	return $fetch<Variant>({
+		path: `/v1/variants/${variantId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -30,7 +30,7 @@ export function getVariant(variantId: number | string, params: GetVariantParams 
  * @returns A paginated list of variant objects ordered by `sort`.
  */
 export function listVariants(params: ListVariantsParams = {}) {
-  return $fetch<ListVariants>({
-    path: `/v1/variants${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListVariants>({
+		path: `/v1/variants${convertListParamsToQueryString(params)}`,
+	})
 }

@@ -10,10 +10,10 @@ import type { GetProductParams, ListProducts, ListProductsParams, Product } from
  * @returns A product object.
  */
 export function getProduct(productId: number | string, params: GetProductParams = {}) {
-  requiredCheck({ productId })
-  return $fetch<Product>({
-    path: `/v1/products/${productId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ productId })
+	return $fetch<Product>({
+		path: `/v1/products/${productId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -29,7 +29,7 @@ export function getProduct(productId: number | string, params: GetProductParams 
  * @returns A paginated list of product objects ordered by `name`.
  */
 export function listProducts(params: ListProductsParams = {}) {
-  return $fetch<ListProducts>({
-    path: `/v1/products${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListProducts>({
+		path: `/v1/products${convertListParamsToQueryString(params)}`,
+	})
 }

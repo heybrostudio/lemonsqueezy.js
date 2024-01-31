@@ -1,9 +1,9 @@
 import { $fetch, convertIncludeToQueryString, convertListParamsToQueryString, requiredCheck } from '../internal'
 import type {
-  GetLicenseKeyInstanceParams,
-  LicenseKeyInstance,
-  ListLicenseKeyInstances,
-  ListLicenseKeyInstancesParams,
+	GetLicenseKeyInstanceParams,
+	LicenseKeyInstance,
+	ListLicenseKeyInstances,
+	ListLicenseKeyInstancesParams,
 } from './types'
 
 /**
@@ -15,10 +15,10 @@ import type {
  * @returns A license key instance object.
  */
 export function getLicenseKeyInstance(licenseKeyInstanceId: number | string, params: GetLicenseKeyInstanceParams = {}) {
-  requiredCheck({ licenseKeyInstanceId })
-  return $fetch<LicenseKeyInstance>({
-    path: `/v1/license-key-instances/${licenseKeyInstanceId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ licenseKeyInstanceId })
+	return $fetch<LicenseKeyInstance>({
+		path: `/v1/license-key-instances/${licenseKeyInstanceId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -34,7 +34,7 @@ export function getLicenseKeyInstance(licenseKeyInstanceId: number | string, par
  * @returns A paginated list of license key instance objects ordered by `id`.
  */
 export function listLicenseKeyInstances(params: ListLicenseKeyInstancesParams = {}) {
-  return $fetch<ListLicenseKeyInstances>({
-    path: `/v1/license-key-instances${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListLicenseKeyInstances>({
+		path: `/v1/license-key-instances${convertListParamsToQueryString(params)}`,
+	})
 }

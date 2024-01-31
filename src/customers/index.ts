@@ -1,11 +1,11 @@
 import { $fetch, convertIncludeToQueryString, convertListParamsToQueryString, requiredCheck } from '../internal'
 import type {
-  Customer,
-  GetCustomerParams,
-  ListCustomers,
-  ListCustomersParams,
-  NewCustomer,
-  UpdateCustomer,
+	Customer,
+	GetCustomerParams,
+	ListCustomers,
+	ListCustomersParams,
+	NewCustomer,
+	UpdateCustomer,
 } from './types'
 
 /**
@@ -21,25 +21,25 @@ import type {
  * @returns A customer object.
  */
 export function createCustomer(storeId: number | string, customer: NewCustomer) {
-  requiredCheck({ storeId })
-  return $fetch<Customer>({
-    path: '/v1/customers',
-    method: 'POST',
-    body: {
-      data: {
-        type: 'customers',
-        attributes: customer,
-        relationships: {
-          store: {
-            data: {
-              type: 'stores',
-              id: storeId.toString(),
-            },
-          },
-        },
-      },
-    },
-  })
+	requiredCheck({ storeId })
+	return $fetch<Customer>({
+		path: '/v1/customers',
+		method: 'POST',
+		body: {
+			data: {
+				type: 'customers',
+				attributes: customer,
+				relationships: {
+					store: {
+						data: {
+							type: 'stores',
+							id: storeId.toString(),
+						},
+					},
+				},
+			},
+		},
+	})
 }
 
 /**
@@ -56,18 +56,18 @@ export function createCustomer(storeId: number | string, customer: NewCustomer) 
  * @returns A customer object.
  */
 export function updateCustomer(customerId: string | number, customer: UpdateCustomer) {
-  requiredCheck({ customerId })
-  return $fetch<Customer>({
-    path: `/v1/customers/${customerId}`,
-    method: 'PATCH',
-    body: {
-      data: {
-        type: 'customers',
-        id: customerId.toString(),
-        attributes: customer,
-      },
-    },
-  })
+	requiredCheck({ customerId })
+	return $fetch<Customer>({
+		path: `/v1/customers/${customerId}`,
+		method: 'PATCH',
+		body: {
+			data: {
+				type: 'customers',
+				id: customerId.toString(),
+				attributes: customer,
+			},
+		},
+	})
 }
 
 /**
@@ -77,20 +77,20 @@ export function updateCustomer(customerId: string | number, customer: UpdateCust
  * @returns A customer object.
  */
 export function archiveCustomer(customerId: string | number) {
-  requiredCheck({ customerId })
-  return $fetch<Customer>({
-    path: `/v1/customers/${customerId}`,
-    method: 'PATCH',
-    body: {
-      data: {
-        type: 'customers',
-        id: customerId.toString(),
-        attributes: {
-          status: 'archived',
-        },
-      },
-    },
-  })
+	requiredCheck({ customerId })
+	return $fetch<Customer>({
+		path: `/v1/customers/${customerId}`,
+		method: 'PATCH',
+		body: {
+			data: {
+				type: 'customers',
+				id: customerId.toString(),
+				attributes: {
+					status: 'archived',
+				},
+			},
+		},
+	})
 }
 
 /**
@@ -102,10 +102,10 @@ export function archiveCustomer(customerId: string | number) {
  * @returns A customer object.
  */
 export function getCustomer(customerId: string | number, params: GetCustomerParams = {}) {
-  requiredCheck({ customerId })
-  return $fetch<Customer>({
-    path: `/v1/customers/${customerId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ customerId })
+	return $fetch<Customer>({
+		path: `/v1/customers/${customerId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -122,7 +122,7 @@ export function getCustomer(customerId: string | number, params: GetCustomerPara
  * @returns A paginated list of customer objects ordered by `created_at` (descending).
  */
 export function listCustomers(params: ListCustomersParams = {}) {
-  return $fetch<ListCustomers>({
-    path: `/v1/customers${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListCustomers>({
+		path: `/v1/customers${convertListParamsToQueryString(params)}`,
+	})
 }

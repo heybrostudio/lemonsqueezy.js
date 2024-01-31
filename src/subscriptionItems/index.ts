@@ -1,10 +1,10 @@
 import { $fetch, convertIncludeToQueryString, convertListParamsToQueryString, requiredCheck } from '../internal'
 import type {
-  GetSubscriptionItemParams,
-  ListSubscriptionItems,
-  ListSubscriptionItemsParams,
-  SubscriptionItem,
-  SubscriptionItemCurrentUsage,
+	GetSubscriptionItemParams,
+	ListSubscriptionItems,
+	ListSubscriptionItemsParams,
+	SubscriptionItem,
+	SubscriptionItemCurrentUsage,
 } from './types'
 
 /**
@@ -16,9 +16,9 @@ import type {
  * @returns A subscription item object.
  */
 export function getSubscriptionItem(subscriptionItemId: number | string, params: GetSubscriptionItemParams = {}) {
-  return $fetch<SubscriptionItem>({
-    path: `/v1/subscription-items/${subscriptionItemId}${convertIncludeToQueryString(params.include)}`,
-  })
+	return $fetch<SubscriptionItem>({
+		path: `/v1/subscription-items/${subscriptionItemId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -30,10 +30,10 @@ export function getSubscriptionItem(subscriptionItemId: number | string, params:
  * @returns A meta object containing usage information.
  */
 export function getSubscriptionItemCurrentUsage(subscriptionItemId: number | string) {
-  requiredCheck({ subscriptionItemId })
-  return $fetch<SubscriptionItemCurrentUsage>({
-    path: `/v1/subscription-items/${subscriptionItemId}/current-usage`,
-  })
+	requiredCheck({ subscriptionItemId })
+	return $fetch<SubscriptionItemCurrentUsage>({
+		path: `/v1/subscription-items/${subscriptionItemId}/current-usage`,
+	})
 }
 
 /**
@@ -49,9 +49,9 @@ export function getSubscriptionItemCurrentUsage(subscriptionItemId: number | str
  * @returns A paginated list of subscription item objects ordered by `created_at` (descending).
  */
 export function listSubscriptionItems(params: ListSubscriptionItemsParams = {}) {
-  return $fetch<ListSubscriptionItems>({
-    path: `/v1/subscription-items${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListSubscriptionItems>({
+		path: `/v1/subscription-items${convertListParamsToQueryString(params)}`,
+	})
 }
 
 /**
@@ -64,18 +64,18 @@ export function listSubscriptionItems(params: ListSubscriptionItemsParams = {}) 
  * @returns A subscription item object.
  */
 export function updateSubscriptionItem(subscriptionItemId: string | number, quantity: number) {
-  requiredCheck({ subscriptionItemId })
-  return $fetch<SubscriptionItem>({
-    path: `/v1/subscription-items/${subscriptionItemId}`,
-    method: 'PATCH',
-    body: {
-      data: {
-        type: 'subscription-items',
-        id: subscriptionItemId.toString(),
-        attributes: {
-          quantity,
-        },
-      },
-    },
-  })
+	requiredCheck({ subscriptionItemId })
+	return $fetch<SubscriptionItem>({
+		path: `/v1/subscription-items/${subscriptionItemId}`,
+		method: 'PATCH',
+		body: {
+			data: {
+				type: 'subscription-items',
+				id: subscriptionItemId.toString(),
+				attributes: {
+					quantity,
+				},
+			},
+		},
+	})
 }

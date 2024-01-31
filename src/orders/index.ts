@@ -10,10 +10,10 @@ import type { GetOrderParams, ListOrders, ListOrdersParams, Order } from './type
  * @returns An order object.
  */
 export function getOrder(orderId: number | string, params: GetOrderParams = {}) {
-  requiredCheck({ orderId })
-  return $fetch<Order>({
-    path: `/v1/orders/${orderId}${convertIncludeToQueryString(params.include)}`,
-  })
+	requiredCheck({ orderId })
+	return $fetch<Order>({
+		path: `/v1/orders/${orderId}${convertIncludeToQueryString(params.include)}`,
+	})
 }
 
 /**
@@ -30,7 +30,7 @@ export function getOrder(orderId: number | string, params: GetOrderParams = {}) 
  * @returns A paginated list of order objects ordered by `created_at` (descending).
  */
 export function listOrders(params: ListOrdersParams = {}) {
-  return $fetch<ListOrders>({
-    path: `/v1/orders${convertListParamsToQueryString(params)}`,
-  })
+	return $fetch<ListOrders>({
+		path: `/v1/orders${convertListParamsToQueryString(params)}`,
+	})
 }

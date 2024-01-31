@@ -9,15 +9,15 @@ import type { ActivateLicense, DeactivateLicense, ValidateLicense } from './type
  * @returns A response object containing `activated`, `error`, `license_key`, `instance`, `meta`.
  */
 export async function activateLicense(licenseKey: string, instanceName: string) {
-  requiredCheck({ licenseKey, instanceName })
-  return $fetch<ActivateLicense>(
-    {
-      path: '/v1/licenses/activate',
-      method: 'POST',
-      body: convertKeys({ licenseKey, instanceName }),
-    },
-    false,
-  )
+	requiredCheck({ licenseKey, instanceName })
+	return $fetch<ActivateLicense>(
+		{
+			path: '/v1/licenses/activate',
+			method: 'POST',
+			body: convertKeys({ licenseKey, instanceName }),
+		},
+		false,
+	)
 }
 
 /**
@@ -28,18 +28,18 @@ export async function activateLicense(licenseKey: string, instanceName: string) 
  * @returns A response object containing `valid`, `error`, `license_key`, `instance`, `meta`.
  */
 export async function validateLicense(licenseKey: string, instanceId?: string) {
-  requiredCheck({ licenseKey })
-  return $fetch<ValidateLicense>(
-    {
-      path: '/v1/licenses/validate',
-      method: 'POST',
-      body: convertKeys({
-        licenseKey,
-        instanceId,
-      }),
-    },
-    false,
-  )
+	requiredCheck({ licenseKey })
+	return $fetch<ValidateLicense>(
+		{
+			path: '/v1/licenses/validate',
+			method: 'POST',
+			body: convertKeys({
+				licenseKey,
+				instanceId,
+			}),
+		},
+		false,
+	)
 }
 
 /**
@@ -50,16 +50,16 @@ export async function validateLicense(licenseKey: string, instanceId?: string) {
  * @returns A response object containing `deactivated`, `error`, `license_key`, `meta`.
  */
 export async function deactivateLicense(licenseKey: string, instanceId: string) {
-  requiredCheck({ licenseKey, instanceId })
-  return $fetch<DeactivateLicense>(
-    {
-      path: '/v1/licenses/deactivate',
-      method: 'POST',
-      body: convertKeys({
-        licenseKey,
-        instanceId,
-      }),
-    },
-    false,
-  )
+	requiredCheck({ licenseKey, instanceId })
+	return $fetch<DeactivateLicense>(
+		{
+			path: '/v1/licenses/deactivate',
+			method: 'POST',
+			body: convertKeys({
+				licenseKey,
+				instanceId,
+			}),
+		},
+		false,
+	)
 }

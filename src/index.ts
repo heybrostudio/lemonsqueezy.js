@@ -12,12 +12,12 @@ export { getStore, listStores } from './stores'
 
 // Customers
 export type {
-  Customer,
-  ListCustomers,
-  NewCustomer,
-  UpdateCustomer,
-  GetCustomerParams,
-  ListCustomersParams,
+	Customer,
+	ListCustomers,
+	NewCustomer,
+	UpdateCustomer,
+	GetCustomerParams,
+	ListCustomersParams,
 } from './customers/types'
 export { listCustomers, getCustomer, createCustomer, archiveCustomer, updateCustomer } from './customers'
 
@@ -47,45 +47,45 @@ export { getOrderItem, listOrderItems } from './orderItems'
 
 // Subscriptions
 export type {
-  Subscription,
-  ListSubscriptions,
-  GetSubscriptionParams,
-  ListSubscriptionsParams,
-  UpdateSubscription,
+	Subscription,
+	ListSubscriptions,
+	GetSubscriptionParams,
+	ListSubscriptionsParams,
+	UpdateSubscription,
 } from './subscriptions/types'
 export { getSubscription, listSubscriptions, updateSubscription, cancelSubscription } from './subscriptions'
 
 // Subscription Invoices
 export type {
-  SubscriptionInvoice,
-  ListSubscriptionInvoices,
-  GetSubscriptionInvoiceParams,
-  ListSubscriptionInvoicesParams,
+	SubscriptionInvoice,
+	ListSubscriptionInvoices,
+	GetSubscriptionInvoiceParams,
+	ListSubscriptionInvoicesParams,
 } from './subscriptionInvoices/types'
 export { getSubscriptionInvoice, listSubscriptionInvoices } from './subscriptionInvoices'
 
 // Subscription Items
 export type {
-  SubscriptionItem,
-  SubscriptionItemCurrentUsage,
-  ListSubscriptionItems,
-  GetSubscriptionItemParams,
-  ListSubscriptionItemsParams,
+	SubscriptionItem,
+	SubscriptionItemCurrentUsage,
+	ListSubscriptionItems,
+	GetSubscriptionItemParams,
+	ListSubscriptionItemsParams,
 } from './subscriptionItems/types'
 export {
-  getSubscriptionItem,
-  listSubscriptionItems,
-  getSubscriptionItemCurrentUsage,
-  updateSubscriptionItem,
+	getSubscriptionItem,
+	listSubscriptionItems,
+	getSubscriptionItemCurrentUsage,
+	updateSubscriptionItem,
 } from './subscriptionItems'
 
 // Usage Records
 export type {
-  NewUsageRecord,
-  UsageRecord,
-  ListUsageRecords,
-  GetUsageRecordParams,
-  ListUsageRecordsParams,
+	NewUsageRecord,
+	UsageRecord,
+	ListUsageRecords,
+	GetUsageRecordParams,
+	ListUsageRecordsParams,
 } from './usageRecords/types'
 export { listUsageRecords, getUsageRecord, createUsageRecord } from './usageRecords'
 
@@ -95,29 +95,29 @@ export { listDiscounts, getDiscount, createDiscount, deleteDiscount } from './di
 
 // Discount Redemptions
 export type {
-  DiscountRedemption,
-  ListDiscountRedemptions,
-  GetDiscountRedemptionParams,
-  ListDiscountRedemptionsParams,
+	DiscountRedemption,
+	ListDiscountRedemptions,
+	GetDiscountRedemptionParams,
+	ListDiscountRedemptionsParams,
 } from './discountRedemptions/types'
 export { listDiscountRedemptions, getDiscountRedemption } from './discountRedemptions'
 
 // License Keys
 export type {
-  LicenseKey,
-  ListLicenseKeys,
-  GetLicenseKeyParams,
-  ListLicenseKeysParams,
-  UpdateLicenseKey,
+	LicenseKey,
+	ListLicenseKeys,
+	GetLicenseKeyParams,
+	ListLicenseKeysParams,
+	UpdateLicenseKey,
 } from './licenseKeys/types'
 export { listLicenseKeys, getLicenseKey, updateLicenseKey } from './licenseKeys'
 
 // License Key Instances
 export type {
-  GetLicenseKeyInstanceParams,
-  ListLicenseKeyInstancesParams,
-  LicenseKeyInstance,
-  ListLicenseKeyInstances,
+	GetLicenseKeyInstanceParams,
+	ListLicenseKeyInstancesParams,
+	LicenseKeyInstance,
+	ListLicenseKeyInstances,
 } from './licenseKeyInstances/types'
 export { listLicenseKeyInstances, getLicenseKeyInstance } from './licenseKeyInstances'
 
@@ -127,12 +127,12 @@ export { listCheckouts, getCheckout, createCheckout } from './checkouts'
 
 // Webhooks
 export type {
-  Webhook,
-  ListWebhooks,
-  GetWebhookParams,
-  ListWebhooksParams,
-  NewWebhook,
-  UpdateWebhook,
+	Webhook,
+	ListWebhooks,
+	GetWebhookParams,
+	ListWebhooksParams,
+	NewWebhook,
+	UpdateWebhook,
 } from './webhooks/types'
 export { listWebhooks, getWebhook, createWebhook, updateWebhook, deleteWebhook } from './webhooks'
 
