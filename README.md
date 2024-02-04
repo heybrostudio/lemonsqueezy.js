@@ -5,6 +5,27 @@
 [![Static Badge](https://img.shields.io/badge/Functions_Usage-%237c3aed)](https://github.com/heybrostudio/lemonsqueezy.js/wiki)
 ![APIs Count](https://img.shields.io/badge/56_Functions-%232563eb)
 
+Dear developers,
+
+I am pleased to announce that my personal repository has been successfully merged into the official repository! This is a very exciting and important milestone.
+
+As a result, my personal repository will be archived. This means that I will no longer maintain or update this repository, and all future development work will transition to the official repository.
+
+Furthermore, with the archival of the repository, the associated npm packages will also be archived. This means that no new versions will be released in the future, and existing versions will continue to be available but will not receive feature updates or bug fixes.
+
+I want to express my gratitude for your continued interest and support of my personal repository. I especially want to thank those who have actively contributed code, submitted issues, and provided suggestions. Without your support, the success of this repository would not have been possible.
+
+Please note that new code and issue tracking will now take place in the official repository. I encourage you to redirect your focus and contribution efforts to the official repository to advance the project's development with a wider developer community.
+
+If you have any questions or concerns, please feel free to reach out to me. Thank you for your interest and support in my repository.
+
+Thank you once again!
+
+Best regards,
+Caven Ding.
+
+Additional information, please refer to the official repository: https://github.com/lmsqueezy/lemonsqueezy.js
+
 ## Introduction
 
 This is the unofficial JavaScript/TypeScript SDK for Lemon Squeezy.
