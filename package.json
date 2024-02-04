@@ -1,7 +1,7 @@
 {
 	"name": "@heybrostudio/lemonsqueezy.js",
 	"description": "This is the unofficial JavaScript SDK for Lemon Squeezy.",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"author": "Caven <cavenasdev@gmail.com>",
 	"type": "module",
 	"exports": {
@@ -14,9 +14,15 @@
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"homepage": "https://github.com/heybrostudio/lemonsqueezy.js",
-	"keywords": ["lemonsqueezy", "javascript", "typescript"],
+	"keywords": [
+		"lemonsqueezy",
+		"javascript",
+		"typescript"
+	],
 	"scripts": {
 		"dev": "bun run --watch examples/dev.ts",
 		"build": "unbuild",
